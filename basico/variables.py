@@ -52,4 +52,28 @@ frutas = ["apple", "manzana","bamama","uvas", "arandano", "manzana", "apple"]
 # frutas2 = frutas.copy()
 # frutas2.append('pepino')
 # print(frutas2)
-print(frutas.count('apple'))
+
+#? metodo extend, deja extender o instanciar una lista o tupla a otra xd, aadir esos valores de la lista
+# print(frutas.count('apple'))
+
+# frutas2=["apel","carajo", "mexico"]
+
+# frutas.extend(frutas2)
+# print(frutas)
+
+#? busca el index del elemento dado, este aso arandano, esta en la pisicion 4 de la lista
+# print(frutas.index('arandano'))
+
+#? agrega el elemento dado al indice o posicion proprocionada, en este caso antes arandano era 4, paso a ser 5, y lol 4 xd
+# frutas.insert(4, 'lol')
+# print(frutas)
+
+#? popea el indice dado, en este cao 4 es arandanos xd pobre arandano ;,v
+# frutas.pop(4)
+
+print(frutas)
+frutas.remove('uvas')
+if(frutas == ValueError):
+    print(f'elemento no encoontrado')
+else:
+    print(frutas)
