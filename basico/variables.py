@@ -124,13 +124,31 @@ productos = [
     {"nombre": "mesa", "precio": 1200, "categoria": "muebles"},
 ]
 
-mayor = 0
-nombre_mayor = ""
+# mayor = 0
+# nombre_mayor = ""
 
-for pr in productos:
-    if pr["precio"] > mayor:
-        mayor = pr["precio"]
-        nombre_mayor = pr["nombre"]
+# for pr in productos:
+#     if pr["precio"] > mayor:
+#         mayor = pr["precio"]
+#         nombre_mayor = pr["nombre"]
 
 
-print(nombre_mayor)
+# print(nombre_mayor)
+
+# suma_produtos = 0
+
+# for pr in productos:
+#     suma_produtos = suma_produtos + pr["precio"]
+
+# print(suma_produtos)
+
+# produtosTech = []
+
+
+# for pr in productos:
+#     if pr["categoria"] == "tech":
+#         print(pr["nombre"])
+#         produtosTech.append(pr["nombre"])
+        
+
+# print(produtosTech)
