@@ -124,7 +124,13 @@ productos = [
     {"nombre": "mesa", "precio": 1200, "categoria": "muebles"},
 ]
 
+mayor = 0
+nombre_mayor = ""
+
 for pr in productos:
-    for n in pr:
-        mayorProducto = (f'el producto actual es: {n}')
-        print(mayorProducto)
+    if pr["precio"] > mayor:
+        mayor = pr["precio"]
+        nombre_mayor = pr["nombre"]
+
+
+print(nombre_mayor)
