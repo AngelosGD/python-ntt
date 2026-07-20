@@ -152,3 +152,45 @@ productos = [
         
 
 # print(produtosTech)
+
+#! Sets
+
+#* cosa a destacar, los sets si hay elementos duplicados no losm toma enc uenta, ejemplo si hay 2 rojos, solo pone 1 rojo por los 2
+#? si asi se crea uno xd 
+colores = {"rojo", "azul", "verde"}
+
+# setVacio = set()
+
+# # #? con los sets si se usa remove y no existe ese elemento, sale un error de tipo key xd
+# # colores.remove("cian")
+
+# #? para quitar un elemento pero tomar si es que no existe y no truene se usa discard
+# colores.discard("cian")
+
+# if "rojo" in colores:
+#     print("sista")
+
+# print(len(colores))
+
+#? convertir lista a sets
+#? en este caso solo saldra del 1,2,3,4,5 sin duplicados
+
+# numeros = [1,1,2,2,2,3,4,5,5]
+# numerosSet = set(numeros)
+# print(numerosSet)
+
+a = {1,2,5}
+b = {5,6}
+
+#? con los sets se pueden hacer iggualaciones logicas como com probabilidad y estadistica con union, interseccion, entre otros.
+print(a | b)
+
+#? si no hay interseccion devuelve 'set()'
+print(a & b)
+
+#? diferencia, depende del orden, no es lo mismo a - b pq esto es la diferencia de lo que esta en b que no esta en a, y b - a es la diferencia de los que 
+#? esta en b pero no en a, dan 2 coas diferentes
+print(b - a)
+
+#! ejercicio por hacer
+#? El ejercicio 4 (el último del día 2) era: crea un set con las categorías únicas que hay en productos.
