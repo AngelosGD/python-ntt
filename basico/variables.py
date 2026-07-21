@@ -179,18 +179,33 @@ colores = {"rojo", "azul", "verde"}
 # numerosSet = set(numeros)
 # print(numerosSet)
 
-a = {1,2,5}
-b = {5,6}
+# a = {1,2,5}
+# b = {5,6}
 
-#? con los sets se pueden hacer iggualaciones logicas como com probabilidad y estadistica con union, interseccion, entre otros.
-print(a | b)
+# #? con los sets se pueden hacer iggualaciones logicas como com probabilidad y estadistica con union, interseccion, entre otros.
+# print(a | b)
 
-#? si no hay interseccion devuelve 'set()'
-print(a & b)
+# #? si no hay interseccion devuelve 'set()'
+# print(a & b)
 
-#? diferencia, depende del orden, no es lo mismo a - b pq esto es la diferencia de lo que esta en b que no esta en a, y b - a es la diferencia de los que 
-#? esta en b pero no en a, dan 2 coas diferentes
-print(b - a)
+# #? diferencia, depende del orden, no es lo mismo a - b pq esto es la diferencia de lo que esta en b que no esta en a, y b - a es la diferencia de los que 
+# #? esta en b pero no en a, dan 2 coas diferentes
+# print(b - a)
 
-#! ejercicio por hacer
-#? El ejercicio 4 (el último del día 2) era: crea un set con las categorías únicas que hay en productos.
+# #! ejercicio por hacer
+# #? El ejercicio 4 (el último del día 2) era: crea un set con las categorías únicas que hay en productos.
+
+productos = [
+    {"nombre": "laptop", "precio": 15000, "categoria": "tech"},
+    {"nombre": "silla", "precio": 800, "categoria": "muebles"},
+    {"nombre": "mouse", "precio": 300, "categoria": "tech"},
+    {"nombre": "mesa", "precio": 1200, "categoria": "muebles"},
+]
+
+
+categoriasSet = set()
+for pr in productos:
+    categoriasSet.add(pr["categoria"])
+
+print(categoriasSet)
+    
