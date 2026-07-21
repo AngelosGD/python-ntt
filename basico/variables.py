@@ -208,4 +208,6 @@ for pr in productos:
     categoriasSet.add(pr["categoria"])
 
 print(categoriasSet)
+
+
     
