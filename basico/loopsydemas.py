@@ -126,17 +126,63 @@
 # #todo por ejemplo buscabamos filtrar el nombre del producto entonces pr["nombre"] ya despues la condicion
 #todo con pr["precio"] > 1000
 
-numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-resultado = []
-for n in numeros:
-    if n % 2 == 0:
-        resultado.append(n ** 2)
-    else:
-        resultado.append(n)
+# resultado = []
+# for n in numeros:
+#     if n % 2 == 0:
+#         resultado.append(n ** 2)
+#     else:
+#         resultado.append(n)
 
-print(resultado)
+# print(resultado)
 
-resultado = [n**2 if n%2 == 0 else n for n in numeros]
-print(resultado)
+# resultado = [n**2 if n%2 == 0 else n for n in numeros]
+# print(resultado)
 
+#! Dict comprehesions
+#? lo mismo que lo anterior pero con diccionatrios
+
+
+#* manera tradicional
+# productos = [
+#     {"nombre": "laptop", "precio": 15000, "categoria": "tech"},
+#     {"nombre": "silla", "precio": 800, "categoria": "muebles"},
+# ]
+
+# # forma tradicional
+# precios = {}
+# for pr in productos:
+#     precios[pr["nombre"]] = pr["precio"]
+
+
+# precios ={pr["nombre"]: pr["precio"] for pr in productos}
+# print(precios)
+
+#todo misma estructura, la condicion o lo que se evalua, y for pr in productos
+productos = [
+    {"nombre": "laptop", "precio": 15000, "categoria": "tech"},
+    {"nombre": "silla", "precio": 800, "categoria": "muebles"},
+    {"nombre": "mouse", "precio": 300, "categoria": "tech"},
+    {"nombre": "mesa", "precio": 1200, "categoria": "muebles"},
+]
+
+#? 1: Crea un dict {nombre: categoria} de todos los productos.
+categoria= {pr["nombre"]: pr["categoria"] for pr in productos}
+print(categoria)
+
+
+#? 2-Crea un dict {nombre: precio} pero solo de los productos de categoría "tech"
+
+precios={ pr["nombre"]: pr["precio"]  for pr in productos if pr["categoria"]=="tech"}
+print(precios)
+
+#? 3 Crea un dict {nombre: precio} pero con el precio ya con 10% de descuento aplicado (precio * 0.9).
+
+descuento = { pr["nombre"]: pr["precio"] * 0.9 for pr in productos }
+print(descuento)
+
+#? 4 Crea un dict donde el precio sea la key y el nombre el value: {precio: nombre}.
+
+invertido = {pr["precio"]: pr["nombre"] for pr in productos}
+print(invertido)
