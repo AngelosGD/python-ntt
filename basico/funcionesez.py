@@ -62,28 +62,28 @@
 # doble = lambda x: x * 2
 # print(doble(5))
 
-# * se pueden utilizar para argumentar otras funciones, como ordenas un diccionario con medio de precio
-productos = [
-    {"nombre": "a", "precio": 500},
-    {"nombre": "b", "precio": 100},
-    {"nombre": "c", "precio": 2000},
-    {"nombre": "d", "precio": 50},
-    {"nombre": "e", "precio": 2},
-]
+# # * se pueden utilizar para argumentar otras funciones, como ordenas un diccionario con medio de precio
+# productos = [
+#     {"nombre": "a", "precio": 500},
+#     {"nombre": "b", "precio": 100},
+#     {"nombre": "c", "precio": 2000},
+#     {"nombre": "d", "precio": 50},
+#     {"nombre": "e", "precio": 2},
+# ]
 
-ordenados = sorted(productos, key=lambda p: p["precio"])
-print(ordenados)
-
-
-# ? ejercicios
-# *1. Función calcular_precio_final(precio, descuento=0) que regrese el precio con descuento aplicado (si no le pasas descuento, que sea 0)
+# ordenados = sorted(productos, key=lambda p: p["precio"])
+# print(ordenados)
 
 
-def calcular_precio_final(precio, descuento=0):
-    return precio - (precio * descuento)
+# # ? ejercicios
+# # *1. Función calcular_precio_final(precio, descuento=0) que regrese el precio con descuento aplicado (si no le pasas descuento, que sea 0)
 
 
-print(calcular_precio_final(100, 0.1))
+# def calcular_precio_final(precio, descuento=0):
+#     return precio - (precio * descuento)
+
+
+# print(calcular_precio_final(100, 0.1))
 
 
 # # * 2 función stats_productos(productos) que reciba la lista y regrese (con return múltiple) el más caro, el más barato, y el promedio de precios.
@@ -138,16 +138,50 @@ print(calcular_precio_final(100, 0.1))
 # print(total_ventas(20,40,599))
 # print(total_ventas(109,109,200))
 
-#? ejercicio 4 Último ejercicio del día 4: usa sorted() con lambda para ordenar la lista de productos de mayor a menor precio.
-productos = [
-    {"nombre": "laptop", "precio": 15000, "categoria": "tech"},
-    {"nombre": "silla", "precio": 800, "categoria": "muebles"},
-    {"nombre": "mouse", "precio": 300, "categoria": "tech"},
-    {"nombre": "mesa", "precio": 1200, "categoria": "muebles"},
-]
+# #? ejercicio 4 Último ejercicio del día 4: usa sorted() con lambda para ordenar la lista de productos de mayor a menor precio.
+# productos = [
+#     {"nombre": "laptop", "precio": 15000, "categoria": "tech"},
+#     {"nombre": "silla", "precio": 800, "categoria": "muebles"},
+#     {"nombre": "mouse", "precio": 300, "categoria": "tech"},
+#     {"nombre": "mesa", "precio": 1200, "categoria": "muebles"},
+# ]
 
 
-ordenados = sorted(productos, key=lambda p: p["precio"], reverse=True)
-print(ordenados)
+# ordenados = sorted(productos, key=lambda p: p["precio"], reverse=True)
+# print(ordenados)
 
 
+#! Ejercicios extra para reforzaar
+#? Default params haz una función calcular_propina(cuenta, porcentaje=15) que regrese cuánto se debe dejar de propina. Si no le pasas porcentaje, usa 15% por default.
+def calcular_propina(cuenta, porcentaje=15):
+    return (cuenta*porcentaje)/100
+
+print(calcular_propina(500))
+
+#? Keyword arguments haz una función crear_tarjeta(nombre, puesto, empresa) que regrese un string tipo "Angel - Developer en NTTData". 
+#? Llámala mandando los argumentos en desorden, usando nombre de parámetro (empresa=..., nombre=..., puesto=...).
+
+def crear_tarjet(nombre, puesto, empresa):
+    return(f"{nombre} - {puesto} en {empresa}")
+
+
+print(crear_tarjet(empresa="ntt-data", nombre="angel", puesto="trainer"))
+
+
+#? Haz una función analizar_texto(texto) que reciba un string y regrese (con return múltiple): cuántos caracteres tiene, cuántas palabras tiene, y el texto en mayúsculas.
+def analizar_texto(texto):
+    return len(texto), len(texto.split()), texto.lower()
+
+print(analizar_texto("HOLA MUNDO"))
+
+#? *args Haz una función encontrar_mayor(*numeros) que reciba cualquier cantidad de números sueltos y regrese el más grande, sin usar max() — 
+#?tienes que hacerlo con un loop y una variable acumuladora (como hiciste en el día 2, pero ahora dentro de una función con *args).
+
+def encontrar_mayor(*numeros):
+    mayor = numeros[0]
+    for n in numeros:
+        if n > mayor:
+            mayor = n
+    return mayor
+
+print(encontrar_mayor(10,100,2,8))
