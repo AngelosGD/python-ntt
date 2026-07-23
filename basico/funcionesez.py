@@ -86,33 +86,68 @@ def calcular_precio_final(precio, descuento=0):
 print(calcular_precio_final(100, 0.1))
 
 
-# * 2 función stats_productos(productos) que reciba la lista y regrese (con return múltiple) el más caro, el más barato, y el promedio de precios.
-def stats_productos(productos):
-    precios = [pr["precio"] for pr in productos]
-    return max(precios), min(precios), sum(precios) / len(productos)
+# # * 2 función stats_productos(productos) que reciba la lista y regrese (con return múltiple) el más caro, el más barato, y el promedio de precios.
+# def stats_productos(productos):
+#     precios = [pr["precio"] for pr in productos]
+#     return max(precios), min(precios), sum(precios) / len(productos)
 
 
+# productos = [
+#     {"nombre": "a", "precio": 500},
+#     {"nombre": "b", "precio": 100},
+#     {"nombre": "c", "precio": 2000},
+#     {"nombre": "d", "precio": 50},
+#     {"nombre": "e", "precio": 2},
+# ]
+
+# mayor, menor, promedio = stats_productos(productos)
+
+# print(mayor, menor, promedio)
+
+# #? pq no me quedo del todo claro xd
+# #* 2.1 Reciba la lista de empleados
+# #* Adentro, saque solo los sueldos en una lista nueva (usando list comprehension)
+# #* Regrese (con return múltiple) el sueldo más alto, el más bajo, y el promedio
+
+# empleados = [
+#     {"nombre": "Juan", "sueldo": 12000},
+#     {"nombre": "Maria", "sueldo": 25000},
+#     {"nombre": "Pedro", "sueldo": 8000},
+#     {"nombre": "Lucia", "sueldo": 18000},
+# ]
+
+
+# def sueldos(empleados):
+#     sueldo = [su["sueldo"] for su in empleados]
+#     return max(sueldo), min(sueldo), sum(sueldo)/len(sueldo)
+
+# minimo, maximo, promedio = sueldos(empleados)
+
+# print(minimo, maximo, promedio)
+
+# #TODO nota aqui, en el return puse que primero retorne max(sueldo), entonces despúes puse priero minimo, max, promedio =..., entonces
+# #TODO el minimo no es el que yo pienso, ya que ese minimo, maximo... retornara el maximo debido al orden del return
+
+
+# #? ejercicio 3: 
+# #* Haz una función total_ventas(*ventas) que reciba cualquier cantidad de montos de venta sueltos y regrese la suma total.
+
+# def total_ventas(*ventas):
+#     return sum(ventas)
+
+# print(total_ventas(20,40,599))
+# print(total_ventas(109,109,200))
+
+#? ejercicio 4 Último ejercicio del día 4: usa sorted() con lambda para ordenar la lista de productos de mayor a menor precio.
 productos = [
-    {"nombre": "a", "precio": 500},
-    {"nombre": "b", "precio": 100},
-    {"nombre": "c", "precio": 2000},
-    {"nombre": "d", "precio": 50},
-    {"nombre": "e", "precio": 2},
+    {"nombre": "laptop", "precio": 15000, "categoria": "tech"},
+    {"nombre": "silla", "precio": 800, "categoria": "muebles"},
+    {"nombre": "mouse", "precio": 300, "categoria": "tech"},
+    {"nombre": "mesa", "precio": 1200, "categoria": "muebles"},
 ]
 
-mayor, menor, promedio = stats_productos(productos)
 
-print(mayor, menor, promedio)
+ordenados = sorted(productos, key=lambda p: p["precio"], reverse=True)
+print(ordenados)
 
-#? pq no me quedo del todo claro xd
-#* 2.1 Reciba la lista de empleados
-#* Adentro, saque solo los sueldos en una lista nueva (usando list comprehension)
-#* Regrese (con return múltiple) el sueldo más alto, el más bajo, y el promedio
-
-empleados = [
-    {"nombre": "Juan", "sueldo": 12000},
-    {"nombre": "Maria", "sueldo": 25000},
-    {"nombre": "Pedro", "sueldo": 8000},
-    {"nombre": "Lucia", "sueldo": 18000},
-]
 
