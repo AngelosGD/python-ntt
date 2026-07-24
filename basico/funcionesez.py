@@ -185,3 +185,22 @@ def encontrar_mayor(*numeros):
     return mayor
 
 print(encontrar_mayor(10,100,2,8))
+
+#? función mostrar_info(**datos) que reciba cualquier cantidad de datos con nombre 
+# ? los imprima uno por uno en formato "nombre: Angel", "edad: 22", etc. Recuerda usar .items() como con diccionarios normales.
+
+def mostrar_info(**datos):
+    for key, value in datos.items():
+        print(f"{key}: {value}")
+
+mostrar_info(nombre= "angel", edad = 20)
+
+#? Último ejercicio, el 6 (lambda + sorted): ordena esta lista de estudiantes de menor a mayor promedio.
+estudiantes = [
+    {"nombre": "Ana", "promedio": 8.5},
+    {"nombre": "Luis", "promedio": 9.2},
+    {"nombre": "Karla", "promedio": 7.8},
+]
+
+ordenados = sorted(estudiantes, key=lambda p: p["promedio"])
+print(ordenados)
